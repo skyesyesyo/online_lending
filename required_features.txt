@@ -1,0 +1,10 @@
+Login (validation); Registration (validation); Logout
+When a borrower logs in, they should see a list of people who have lent him money (including the amount lent per lender)
+When a borrower logs in, they should see his total amount raised
+When a lender logs in, they should see a list of all people in need of financial help (borrowers). It should display the name of the borrower, description why borrower needs money, how much money borrower needs, and how much money borrower raised.
+When a lender logs in, they should see a list of people he was able to lend money to (A separate table, more like a lend history of the currently logged in user). It should display the name of the borrower, the description why borrower needs money, the amount needed, the amount raised so far, and amount lent. 
+If the borrower's name is already on the "List of People Lent Money To", the name does not need to be appended to the table. But the original amount of Money Raised and Money Lent should update/increment with the new amount lent.
+A lender must be able to lend a specific amount to any borrowers.
+If the lender's account balance turns zero and attempts to lend money, then the lender will see an error message saying "Insufficient funds", and should not allow the lending process.
+If lender's current account balance is lesser than money intended to lend, then display an error and do not allow the lending process to continue.
+You must be able to deploy your work to Amazon EC2 and provide the IP address or subdomain/domain name to where your work has been deployed. Please note that Heroku deployment is not honored.

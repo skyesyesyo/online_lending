@@ -1,0 +1,10 @@
+<fieldset>
+	<legend>Log in</legend>
+	<form action="/sessions" method="post">
+		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+		<p>Email: <input type="text" name="email" id="email"></p>
+		<p>Password: <input type="password" name="password" id="password"></p>
+		<p><a href="/">Click here to register </a><input type="submit" name="Log In" value="Log In"></p>
+		
+	</form>
+</fieldset>

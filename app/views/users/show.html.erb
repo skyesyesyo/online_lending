@@ -1,0 +1,39 @@
+<h1>Welcome Lender!</h1>
+<h4>Name: <strong><%= @user.first_name %> <%= @user.last_name %></strong></h4>
+<h4>Account Balance: <strong><%= @user.money %></strong></h4>
+
+<h4><strong>List of people who are in need of help:</strong></h4>
+
+<div style="font-size: 20px;">
+	<table border="1">
+		<tr>
+			<th>Name </th>
+			<th>Money Needed For </th>
+			<th>Description </th>
+			<th>Amount Needed </th>
+			<th>Amount Raised </th>
+			<th>Action</th>
+		</tr>`
+		<% @borrowers.each do |borrower| %>
+		<tr>
+			<!-- <td><%= borrower.id %></td> -->
+			<td><%= borrower.first_name %> <%= borrower.last_name %></td>
+			<td><%= borrower.purpose %></td>
+			<td><%= borrower.description %></td>
+			<td><%= borrower.money %></td>
+			<td><%= borrower.raised %></td>
+			<td>
+				<form action="/historys" method="POST">
+					<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+					Amount: <input type="number" name="historys[amount]" id="Loan_amt">
+					
+					<input type="hidden" value="<%= borrower.id %>" name="historys[borrower_id]">
+					<input type="hidden" value="<%= @user.id %>" name="historys[lender_id]">
+					<input type="submit" value="Lend">
+
+				</form>
+			</td>
+		</tr>
+		<% end %>
+	</table>
+</div>

@@ -1,0 +1,48 @@
+<% content_for :title, 'Registration Page' %>
+
+<% content_for :left do %>
+
+<fieldset>
+	<legend>Lender</legend>
+	<form action="/users" method="post">
+		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+		<p>First Name: <input type="text" name="lender[first_name]" id="first_name"></p>
+		<p>Last Name: <input type="text" name="lender[last_name]" id="last_name"></p>
+		<p>Email: <input type="text" name="lender[email]" id="Email"></p>
+		<p>Password: <input type="password" name="lender[password]" id="Password"></p>
+		<p>Password Confirmation: <input type="password" name="lender[password_confirmation"></p>
+		<p>Money: <input type="number" name="lender[money]" id="money"></p>
+
+		<p><a href="/sessions/new">Already a member? </a><input type="submit" name="Register" value="Register"></p>
+
+	</form>
+</fieldset>
+
+
+<% end %>
+
+
+<% content_for :right do %>
+
+<fieldset>
+	<legend>Borrower</legend>
+	<form action="/borrowers" method="post">
+		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+		<p>First Name: <input type="text" name="borrower[first_name]" id="first_name"></p>
+		<p>Last Name: <input type="text" name="borrower[last_name]" id="last_name"></p>
+		<p>Email: <input type="text" name="borrower[email]" id="email"></p>
+		<p>Password: <input type="password" name="borrower[password]" id="password"></p>
+		<p>Password confirmation: <input type="password" name="borrower[password_confirmation]"></p>
+		<p>Need Money for: <input type="text" name="borrower[purpose]" id="purpose"></p>
+		<p>Description: <input type="text" name="borrower[description]" id="description"></p>
+		<p>Amount Needed: <input type="number" name="borrower[money]" id="money"></p>
+		<p><a href="sessions/new">Already a member? </a><input type="submit" name="Register" value="Register"></p>
+
+	</form>
+</fieldset>
+
+
+<% end %>
+
+
